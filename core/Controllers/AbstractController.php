@@ -4,7 +4,6 @@ namespace Controllers;
 
 
 use Attributes\DefaultEntity;
-use Attributes\TargetEntity;
 use Attributes\TargetRepository;
 use Attributes\UsesEntity;
 
@@ -20,7 +19,7 @@ class AbstractController
     {
 
 
-            $this->usesEntity =$this->resolveUsesEntity();
+        $this->usesEntity =$this->resolveUsesEntity();
 
 
         if($this->usesEntity){

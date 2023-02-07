@@ -2,6 +2,12 @@
 
 namespace Entity;
 
+use Attributes\Table;
+use Attributes\TargetRepository;
+use Repositories\DuckRepository;
+
+#[Table(name: "ducks")]
+#[TargetRepository(repositoryName: DuckRepository::class)]
 class Duck extends AbstractEntity
 {
     private int $id;

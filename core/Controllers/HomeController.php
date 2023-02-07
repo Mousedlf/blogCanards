@@ -11,9 +11,6 @@ use Entity\AbstractEntity;
 class HomeController extends AbstractController
 {
 
-
-
-
     public function index()
     {
 
