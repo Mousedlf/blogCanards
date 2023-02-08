@@ -2,7 +2,6 @@
 
 namespace Repositories;
 
-
 use Attributes\TargetEntity;
 use Entity\Duck;
 
@@ -11,10 +10,11 @@ class DuckRepository extends AbstractRepository
 {
     //methode insert
     public function insert(Duck $duck){
-        $request = $this->pdo->prepare("INSERT INTO {$this->tableName} SET name=:name, description=:description");
+        $request = $this->pdo->prepare("INSERT INTO {$this->tableName} SET name=:name, description=:description, image=:image");
         $request->execute([
             "name"=>$duck->getName(),
-            "description"=>$duck->getDescription()
+            "description"=>$duck->getDescription(),
+            "image"=>$duck->getImage()
         ]);
 
         return $this->pdo->lastInsertId();

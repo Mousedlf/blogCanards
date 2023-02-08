@@ -71,9 +71,13 @@ class DuckController extends AbstractController
 
         if($name && $description){
 
+            $image = new File("duckImage");
+            if($image->isImage()){ $image->upload();}
+
             $duck = new Duck();
             $duck->setName($name);
             $duck->setDescription($description);
+            $duck->setImage($image->getName());
 
             $idDuck = $this->repository->insert($duck);
 

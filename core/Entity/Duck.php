@@ -13,6 +13,7 @@ class Duck extends AbstractEntity
     private int $id;
     private string $name;
     private string $description;
+    private string $image;
 
     /**
      * @return int
@@ -52,6 +53,22 @@ class Duck extends AbstractEntity
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
     }
 
 

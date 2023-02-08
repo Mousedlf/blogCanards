@@ -6,7 +6,6 @@ class File
 {
 
 
-
     private $uploadDirectory;
     private $fileData;
     private $extension;
@@ -34,23 +33,17 @@ class File
     }
 
     public function upload(){
-
-
             move_uploaded_file($this->tempFile, $this->target);
-
-
     }
 
     /**
      * @return string
      */
-    public function getName(): string
-    {
+    public function getName(): string{
         return $this->name;
     }
 
     public function isImage(){
-
         return in_array($this->mimeType, $this->acceptedMimeTypes);
     }
 
