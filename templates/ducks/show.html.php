@@ -14,6 +14,15 @@
 
     <?php foreach ($reviews as $review) : ?>
 
-         <p class="border border-dark p-2"><?= $review->getContent() ?></p>
+        <div class="border bg-light border-dark p-2 d-flex justify-content-between mb-1 ">
+                <p class="p-0 m-0"><?= $review->getContent() ?></p>
+                <a href="?type=review&action=remove&id=<?= $duck->getId() ?>" class="btn btn-danger btn-sm">Delete comment</a>
+        </div>
 
     <?php endforeach; ?>
+
+<form action="?type=review&action=create" method="post" class="mt-2">
+    <input type="text" name="content" id="" placeholder="new comment">
+    <input class="btn btn-dark btn-sm" type="submit" value="send" >
+    
+</form>

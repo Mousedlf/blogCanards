@@ -58,7 +58,10 @@ class DuckController extends AbstractController
 
         $this->repository->delete($duck);
 
-        return $this->redirect();
+        return $this->redirect([
+            "type"=>"duck",
+            "action"=>"index"
+        ]);
 
 
     }

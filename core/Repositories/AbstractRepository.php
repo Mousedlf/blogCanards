@@ -76,8 +76,6 @@ class AbstractRepository
         return $item;
     }
 
-
-
     public function delete(object $object){
         $query = $this->pdo->prepare("DELETE FROM $this->tableName WHERE id = :id") ;
 
