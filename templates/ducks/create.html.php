@@ -1,4 +1,4 @@
-<p>NEW DUCK</p>
+<h1 class="fw-bold">NEW DUCK</h1>
 
 <form enctype="multipart/form-data" action="?type=duck&action=create" method="post">
     <input class="form-control" placeholder="name of the duck" type="text" name="name" id="">

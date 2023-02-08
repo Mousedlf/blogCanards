@@ -2,8 +2,10 @@
 
 namespace Controllers;
 
+use App\File;
 use Attributes\DefaultEntity;
 use Entity\Duck;
+use Entity\Review;
 
 #[DefaultEntity(entityName: Duck::class)]
 class DuckController extends AbstractController
@@ -30,12 +32,14 @@ class DuckController extends AbstractController
 
         $duck = $this->repository->findById($id);
 
+        $reviews = $this->getRepository(Review::class)->findAllByDuck($duck);
+
         if(!$duck){ return $this->redirect();}
 
         return $this->render("ducks/show",[
             "pageTitle"=> $duck->getName(),
             "duck"=>$duck,
-            "review"=>$review
+            "reviews"=>$reviews
         ]);
 
     }
@@ -72,13 +76,13 @@ class DuckController extends AbstractController
 
         if($name && $description){
 
-//            $image = new File("duckImage");
-//            if($image->isImage()){ $image->upload();}
+            $image = new File("duckImage");
+            if($image->isImage()){ $image->upload();}
 
             $duck = new Duck();
             $duck->setName($name);
             $duck->setDescription($description);
-//            $duck->setImage($image->getName());
+            $duck->setImage($image->getName());
 
             $idDuck = $this->repository->insert($duck);
 

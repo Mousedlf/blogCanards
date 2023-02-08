@@ -10,8 +10,10 @@
 <p><?= $duck-> getDescription() ?></p>
 
 
-<?php foreach ($reviews as $review) : ?>
+<h4 class="mt-5">Comments</h4>
 
-<p><?= $review->getContent() ?></p>
+    <?php foreach ($reviews as $review) : ?>
 
-<?php endforeach; ?>
+         <p class="border border-dark p-2"><?= $review->getContent() ?></p>
+
+    <?php endforeach; ?>
