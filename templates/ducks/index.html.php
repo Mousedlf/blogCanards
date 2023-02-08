@@ -3,12 +3,12 @@
 
     <?php foreach($ducks as $duck): ?>
 
-        <div class="card" style="width: 18">
-<!--            <img src="images/--><?php //= $duck->getImage() ?><!--" class="card-img-top" alt="...">-->
-            <div class="card-body">
+        <div class="card col-3 p-0 m-2" >
+            <img src="images/<?= $duck->getImage() ?>" class="card-img-top" height="200px" alt="...">
+            <div class="card-body p-4">
                 <h5 class="card-title"><?= $duck-> getName() ?></h5>
                     <p class="card-text"><?= $duck-> getDescription() ?></p>
-                    <a href="?type=duck&action=show&id=<?= $duck->getId() ?>" class="btn btn-warning">See more</a>
+                    <a href="?type=duck&action=show&id=<?= $duck->getId() ?>" class="btn btn-primary">See more</a>
             </div>
         </div>
 

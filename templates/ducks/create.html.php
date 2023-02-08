@@ -1,8 +1,8 @@
 <p>NEW DUCK</p>
 
 <form enctype="multipart/form-data" action="?type=duck&action=create" method="post">
-    <input type="text" name="name" id="">
-    <input type="text" name="description" id="">
-<!--    <input type="file" name="duckImage" id="">-->
-    <input type="submit" value="Add your fancy new duck">
+    <input class="form-control" placeholder="name of the duck" type="text" name="name" id="">
+    <textarea class="form-control mt-2" placeholder="description of said duck" rows="4" type="text" name="description" id=""></textarea>
+    <input type="file" name="duckImage" id="">
+    <input class="btn btn-success mt-3"  type="submit" value="Add your fancy new duck">
 </form>
