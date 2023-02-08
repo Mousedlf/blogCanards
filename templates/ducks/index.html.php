@@ -4,7 +4,7 @@
     <?php foreach($ducks as $duck): ?>
 
         <div class="card" style="width: 18">
-            <img src="images/<?= $duck->getImage() ?>" class="card-img-top" alt="...">
+<!--            <img src="images/--><?php //= $duck->getImage() ?><!--" class="card-img-top" alt="...">-->
             <div class="card-body">
                 <h5 class="card-title"><?= $duck-> getName() ?></h5>
                     <p class="card-text"><?= $duck-> getDescription() ?></p>

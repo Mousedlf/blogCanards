@@ -10,14 +10,16 @@ class DuckRepository extends AbstractRepository
 {
     //methode insert
     public function insert(Duck $duck){
-        $request = $this->pdo->prepare("INSERT INTO {$this->tableName} SET name=:name, description=:description, image=:image");
+        $request = $this->pdo->prepare("INSERT INTO {$this->tableName} SET name=:name, description=:description"); //image=:image
         $request->execute([
             "name"=>$duck->getName(),
-            "description"=>$duck->getDescription(),
-            "image"=>$duck->getImage()
+            "description"=>$duck->getDescription()
         ]);
 
         return $this->pdo->lastInsertId();
     }
 
 }
+
+/* "image"=>$duck->getImage() */
+/*    remettre ligne image dans DB*/

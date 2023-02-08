@@ -34,7 +34,8 @@ class DuckController extends AbstractController
 
         return $this->render("ducks/show",[
             "pageTitle"=> $duck->getName(),
-            "duck"=>$duck
+            "duck"=>$duck,
+            "review"=>$review
         ]);
 
     }
@@ -71,13 +72,13 @@ class DuckController extends AbstractController
 
         if($name && $description){
 
-            $image = new File("duckImage");
-            if($image->isImage()){ $image->upload();}
+//            $image = new File("duckImage");
+//            if($image->isImage()){ $image->upload();}
 
             $duck = new Duck();
             $duck->setName($name);
             $duck->setDescription($description);
-            $duck->setImage($image->getName());
+//            $duck->setImage($image->getName());
 
             $idDuck = $this->repository->insert($duck);
 
