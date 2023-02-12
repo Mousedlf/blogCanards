@@ -10,6 +10,11 @@ use Entity\Review;
 #[DefaultEntity(entityName: Duck::class)]
 class DuckController extends AbstractController
 {
+    /**
+     utilité:
+     paramètres attendus: /
+     valeur de retour:
+     **/
     public function index(){
 
         $ducks = $this->repository->findAll();
@@ -20,6 +25,10 @@ class DuckController extends AbstractController
         ]);
 
     }
+
+    /**
+
+     **/
     public function show(){
 
         $id= null;
@@ -31,10 +40,10 @@ class DuckController extends AbstractController
         if(!$id){ return $this->redirect();}
 
         $duck = $this->repository->findById($id);
-
+        if(!$duck){ return $this->redirect();}
         $reviews = $this->getRepository(Review::class)->findAllByDuck($duck);
 
-        if(!$duck){ return $this->redirect();}
+
 
         return $this->render("ducks/show",[
             "pageTitle"=> $duck->getName(),

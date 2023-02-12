@@ -11,8 +11,6 @@ class AbstractController
 {
 
     protected $usesEntity = true;
-
-
     protected $repository;
 
     public function __construct()

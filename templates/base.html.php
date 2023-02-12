@@ -10,22 +10,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body class="bg-warning">
-<nav class="navbar navbar-expand-lg bg-body-warning d-flex justify-content-center ">
-    <div class="container-fluid ">
-        <a class="navbar-brand fw-bold" href="index.php">QUACK</a>
-        <img src="" alt="">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+<nav class="navbar navbar-expand-lg bg-body-warning ">
+    <div class="container">
+            <ul class="navbar-nav m-auto my-3 ">
+                <li class="nav-item mx-5">
                     <a class="nav-link active" href="?type=duck&action=index">All ducks</a>
                 </li>
-                <li class="nav-item">
+                <a class="navbar-brand fw-bold mx-5" href="index.php">QUACK</a>
+                <li class="nav-item mx-5">
                     <a class="nav-link active" href="?type=duck&action=create">Add a duck</a>
                 </li>
 
             </ul>
 
-        </div>
     </div>
 </nav>
 
