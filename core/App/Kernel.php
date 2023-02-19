@@ -4,7 +4,11 @@ namespace App;
 
 class Kernel
 {
-
+    /**
+    utilité:
+    paramètres attendus: /
+    valeur de retour:
+     **/
     public static function run(){
 
         $type = "home";
@@ -22,9 +26,6 @@ class Kernel
         $controller = new $controllerName();
 
         $controller->$action();
-
-
-
 
         }
 

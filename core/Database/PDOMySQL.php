@@ -5,6 +5,9 @@ namespace Database;
 class PDOMySQL
 {
 
+    /**
+    utilité: connexion a la DB
+     **/
     public static function getPdo():\PDO
     {
 

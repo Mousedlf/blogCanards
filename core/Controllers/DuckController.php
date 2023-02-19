@@ -11,12 +11,9 @@ use Entity\Review;
 class DuckController extends AbstractController
 {
     /**
-     utilité:
-     paramètres attendus: /
-     valeur de retour:
+
      **/
     public function index(){
-
         $ducks = $this->repository->findAll();
 
         return $this->render("ducks/index",[
@@ -30,7 +27,6 @@ class DuckController extends AbstractController
 
      **/
     public function show(){
-
         $id= null;
 
         if(!empty ($_GET['id']) && ctype_digit($_GET['id'])){
@@ -43,8 +39,6 @@ class DuckController extends AbstractController
         if(!$duck){ return $this->redirect();}
         $reviews = $this->getRepository(Review::class)->findAllByDuck($duck);
 
-
-
         return $this->render("ducks/show",[
             "pageTitle"=> $duck->getName(),
             "duck"=>$duck,
@@ -52,6 +46,7 @@ class DuckController extends AbstractController
         ]);
 
     }
+
     public function remove(){
         $id= null;
 
@@ -71,11 +66,12 @@ class DuckController extends AbstractController
             "type"=>"duck",
             "action"=>"index"
         ]);
-
-
     }
-    public function create(){
 
+    /**
+    ajout d'un element à la DB .
+     **/
+    public function create(){
         $name=null;
         $description=null;
 

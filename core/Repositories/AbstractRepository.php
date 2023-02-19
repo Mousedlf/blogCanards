@@ -27,6 +27,9 @@ class AbstractRepository
         return $attributes[0]->getArguments()["entityName"];
     }
 
+    /**
+    .
+     **/
     protected function resolveTableName(){
         $reflect = new \ReflectionClass($this->targetEntity);
         $attributes = $reflect->getAttributes(Table::class);
@@ -37,7 +40,7 @@ class AbstractRepository
 //______________________________________________________
 
     /**
-    requete pour trouver tous les element d'une table
+    requete pour trouver tous les elements d'une table
     retourne tous les éléments.
      **/
     public function findAll(){
