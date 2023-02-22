@@ -11,7 +11,7 @@ use Entity\Review;
 class DuckController extends AbstractController
 {
     /**
-
+    récupération de tous les éléments de la table puis affichage
      **/
     public function index(){
         $ducks = $this->repository->findAll();
@@ -24,7 +24,7 @@ class DuckController extends AbstractController
     }
 
     /**
-
+    affichage d'un element de la table.
      **/
     public function show(){
         $id= null;
@@ -47,6 +47,9 @@ class DuckController extends AbstractController
 
     }
 
+    /**
+    suppression d'un element de la DB.
+     **/
     public function remove(){
         $id= null;
 
